@@ -1,0 +1,250 @@
+:root {
+    --orange-300-work: hsl(15, 100%, 70%);
+    --blue-300-play: hsl(195, 74%, 62%);
+    --pink-400-study: hsl(348, 100%, 68%);
+    --green-400-exercise: hsl(145, 58%, 55%);
+    --purple-500: hsl(235, 45%, 61%);
+    --purple-600: hsl(246, 80%, 60%);
+    --purple-700-social: hsl(264, 64%, 52%);
+    --yellow-300-self-care: hsl(43, 84%, 65%);
+    --navy-200: hsl(236, 100%, 87%);
+    --navy-900: hsl(235, 46%, 20%);
+    --navy-950: hsl(226, 43%, 10%);
+    --font-size: 18px;
+    --font-family: "Rubik", sans-serif;
+    --font-weight-300: 300;
+    --font-weight-400: 400;
+    --font-weight-500: 500;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--navy-950);
+    font-family: var(--font-family);
+}
+
+.container {
+    width: 1200px;
+    display: flex;
+    gap: 25px;
+}
+
+.container .user {
+    background-color: var(--navy-900);
+    border-radius: 15px;
+    width: 230px;
+}
+
+.container .user .head {
+    background-color: var(--purple-600);
+    border-radius: 15px;
+    padding: 30px 25px;
+    height: 300px;
+}
+
+.container .user .head .image {
+    width: 60px;
+    height: 60px;
+    border: 3px solid white;
+    border-radius: 50%;
+    margin-bottom: 25px;
+}
+
+.container .user .head .image img {
+    width: 100%;
+    height: 100%;
+}
+
+.container .user .head .info p {
+    margin-bottom: 0;
+    color: var(--navy-200);
+    font-weight: var(--font-weight-300);
+}
+
+.container .user .head .info h1 {
+    color: white;
+    font-weight: var(--font-weight-300);
+    width: 200px;
+    margin-top: 0;
+}
+
+.container .user ul {
+    list-style-type: none;
+    padding: 10px 20px;
+    margin: 0;
+}
+
+.container .user ul li:first-child {
+    margin-top: 15px;
+}
+
+.container .user ul li {
+    color: var(--navy-200);
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+
+.container .user ul li:hover,
+.container .user ul .active {
+    color: white;
+}
+
+.container .tracking {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.container .tracking .time {
+    width: calc((100% - 60px) / 3);
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+.container .tracking .time .image {
+    text-align: end;
+    overflow: hidden;
+}
+
+.container .tracking .time .image img {
+    position: relative;
+    top: -15px;
+    right: 10px;
+}
+
+.container .tracking .time .content {
+    height: 88%;
+    background-color: var(--navy-900);
+    margin-top: -38px;
+    position: relative;
+    padding: 20px;
+    border-radius: inherit;
+}
+
+.container .tracking .time:hover .content {
+    background-color: var(--purple-500);
+}
+
+.container .tracking .time .content .title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.container .tracking .time .content .title span {
+    color: white;
+    font-weight: var(--font-weight-500);
+}
+
+.container .tracking .time .content .title img {
+    width: 30px;
+}
+
+.container .tracking .time .content .info h2 {
+    color: white;
+    font-size: 50px;
+    font-weight: var(--font-weight-300);
+}
+
+.container .tracking .time .content .info p {
+    color: var(--navy-200);
+    font-weight: var(--font-weight-500);
+}
+
+.container .tracking .time.work {
+    background-color: var(--orange-300-work);
+}
+
+.container .tracking .time.play {
+    background-color: var(--blue-300-play);
+}
+
+.container .tracking .time.study {
+    background-color: var(--pink-400-study);
+}
+
+.container .tracking .time.exercise {
+    background-color: var(--green-400-exercise);
+}
+
+.container .tracking .time.social {
+    background-color: var(--purple-700-social);
+}
+
+.container .tracking .time.self-care {
+    background-color: var(--yellow-300-self-care);
+}
+
+
+@media (max-width: 767px) {
+    body {
+        display: block;
+    }
+
+    .container {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .container .user {
+        width: 100%;
+    }
+
+    .container .user .head {
+        display: flex;
+        height: fit-content;
+    }
+
+    .container .user ul {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .container .user ul li:first-child {
+        margin: 0;
+    }
+
+    .container .user ul li {
+        padding: 20px;
+        display: flex;
+        justify-self: center;
+        align-items: center;
+        margin: 0;
+    }
+
+    .container .user .head .image {
+        margin-right: 20px;
+    }
+
+    .container .user .head .info h1 {
+        width: 100%;
+    }
+
+    .container .tracking {
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    .container .tracking .time {
+        width: 100%;
+        height: 170px;
+    }
+
+    .container .tracking .time .content .info {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .container .tracking .time .content .info h2 {
+        margin-top: 20px;
+        font-size: 30px;
+    }
+}
